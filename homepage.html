@@ -1,6 +1,9 @@
 <HTML>
-<BODY>
-<div align=center><H3>Fusion Shell Intranet 4.2 Homepage</H3></div>
+<HEAD>
+
+</HEAD>
+<BODY onload="checkLicense();checkPHPInstalled()">
+<div align=center><H3>Fusion Shell Intranet Open25 Homepage</H3></div>
 <div align=center><img src="clubhouse.png" width=1100px height=600px><BR></div><BR>
 <BR>October 2019</BR>
 <BR>
@@ -12,18 +15,63 @@ Wordpress, Drupal, and Joomla templates among others.</div>
 <H4> AUG-2020 - OPENSOURCE - RELEASE 2 - Admin Load - Is a Robust platform which includes 3 Copies of Wordpress(Corporate, Commerce, Forums).<BR>
 A Joomla SSO platform, and Drupal Research Site and tomato commerce with preloaded code.</H4> 
 <H4>DEC-2020 - GEN3 SYSTEMS- Included A Seperate Platform For Mobile Browsers, And An Intranet Bolt-On For Existing Customers Who Wanted To Use The Same CMS Systems For External And Internal Customers(Which Isnt a terrible idea for a SMB with limited resources.)</H4>
-
-
-
 <H4>AUG-2021 - RELEASE 4.1 - Is a Prebuilt Load for Dedicated Servers.... Its a bit better than an Appliance, but it requires a robust mutli-core target server with 8GB of RAM....<BR>
 its an Installer Driven Version of Release2 with proximity extensions</H4>
-<H5>Release 4.1 - Support for Amazon Cloud, Google Cloud, Hybrid Cloud</H5><HR>
+<H5>Release 4.1 - Support for Amazon Cloud, Google Cloud, Hybrid Cloud</H5>
+<H4>DEC-2026 - OPEN RELEASE 25 INTRANET - PREVIOUS VERSIONS NOW EOL - THIS PRODUCT.</H4>
+<HR>
 <H3><font color=#CC5500>PROFESSIONAL PRODUCTS (SUBSCRIPTION BASED PER NAMED USER)</font><H3>
-
 <H4>RELEASE 5.01 - Is a Grid-Ready Prebuilt Load for Dedicated Servers.... It includes Version4.0 code plus GEM(Greenville Enterprise Manager), HA DBMS Support, Mobile Embedded Drivers, Custom Installers, and support for Oracle, MS-SQL Server, and Adobe Coldfusion. Its an Installer Driven Platform which is intended as wrapper for Microsoft Dynamics, Oracle Financials, or OpenSource tools selected by Greenville Associates in a tightly integrated bundle. FusionPro Shells run the Glocation.Info portal and are in production now.</H4>
-
 <H4>RELEASE 6 - Professional Lines are for Businesses which already own an accounting system(Oracle, Microsoft, NCR Backoffice). <BR>
 They are still under development and are intended to be priced to market and are not opensource. </H4>
 <BR>
 </BODY>
+<script>
+
+// ---------------------------------------------------------
+// 1. LICENSE CHECK
+// ---------------------------------------------------------
+function checkLicense() {
+    fetch("./installation/license/license.txt", { method: "HEAD" })
+        .then(response => {
+            if (!response.ok) {
+                alert("No License Installed. You have been granted a 30 day trial license");
+            }
+        })
+        .catch(() => {
+            alert("No License Installed. You have been granted a 30 day trial license");
+        });
+}
+
+
+// ---------------------------------------------------------
+// 2. INSTALLATION CHECK
+// ---------------------------------------------------------
+function checkInstall() {
+    fetch("./installation/configuration/config.txt")
+        .then(async response => {
+            if (!response.ok) {
+                // Missing config ? go to installer
+                window.location.href = "install.html";
+                return;
+            }
+
+            const text = await response.text();
+	    console.log("text",text);
+            if (!text.trim()) {
+                // Blank config ? go to installer
+                window.location.href = "install.html";
+                return;
+            }
+
+            // Installation is valid ? now check license
+            checkLicense();
+        })
+        .catch(() => {
+            // Any error ? treat as missing config
+            window.location.href = "install.html";
+        });
+}
+
+</script>
 </HTML>
