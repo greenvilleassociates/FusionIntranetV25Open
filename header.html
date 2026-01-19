@@ -1,36 +1,81 @@
+<html>
+<head>
+<title>FusionIntranet - TopMenu</title>
 <style>
- a {
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Cambria, serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+a {
   color: white;
   text-decoration: none;
   font-size: 9pt;
+  margin-left: 8px;
+  font-family: Cambria, serif;
 }
 
-.grey{
+.grey {
   color: grey;
-  text-decoration: none;
   font-size: 8pt;
+  font-family: Cambria, serif;
+}
+
+.green {
+  color: green;
+  font-size: 8pt;
+  font-family: Cambria, serif;
+}
+
+.profile-pic {
+  vertical-align: middle;
 }
 </style>
-<html>
-<body bgcolor=black>
 
-<div align=left><span><font color=green>G/</font><font color=white>A&nbsp</font><font color=#FFC0CB>FusionIntranet&nbsp&nbsp</font></span>
-<span style="float: right;">
-<a href="https://www.greenvilleassociates.com/fusionshell/w2/index.php/shop" target="body2"><font color=green> |&nbsp&nbsp@JOIN-UNIFIED</f
-ont>&nbsp&nbsp</a>
-<a href="https://www.glocation.info/fusionpro/features/cs.html" target="body2"><font color=green> |&nbsp&nbsp@GLOCATION.INFO&nbsp&nbsp|</font></a>
-<a><font color=white>&nbsp&nbsp&nbsp<a href="centercourt.html" target="body2">HOME&nbsp&nbsp</a>
-<a><font color=white>&nbsp&nbsp&nbsp<a href="interiorindex.html" target="body2">vCARD&nbsp&nbsp</a>
-<a href="https://www.greenvilleassociates.com/fusionshell/h/index.php/en/software" target="body2">SOFTWARE&nbsp&nbsp</a>
-<a href="https://www.greenvilleassociates.com/fusionshell/h/index.php/en/services" target="body2">SERVICES&nbsp&nbsp</a>
-<a href="https://www.greenvilleassociates.com/fusionshell/h/index.php/en/corporate" target="body2">CORPORATE&nbsp&nbsp</a></font></font>
-<a href="https://gaweb1.greenvilleassociates.com/fusionshell/h/index.php" target="body2"><font color=grey>|&nbsp&nbspNEWS+SEARCH&nbsp&nbsp</a></
-font></font> 
-<a href="https://gaweb1.greenvilleassociates.com/fusionshellplus/wiki/" target="_blank"><font color=grey>SUPPORTWIKI&nbsp&nbsp</a></
-font></font>
-<a href="https://gaweb1.greenvilleassociates.com/fusionshell/w2/index.php/forums/" target="body2"><font color=grey>G.FORUMS&nbsp&nbsp</a></
-font></font>
-<a href="https://github.com/greenvilleassociates" target="_blank"><font color=grey>DOWNLOADS&nbsp&nbsp</a></font></span>
+</head>
+
+<body>
+<div class="navbar">
+
+  <!-- LEFT SIDE -->
+  <div>
+    <span><font color=green>G/</font><font color=white>A&nbsp;</font><font color=#FFC0CB>FusionIntranet&nbsp;&nbsp;</font></span>
+    <span class="grey">
+      [V25.01]
+      <a href="https://gl1.glocation.info/gl1/" target="body2"><font color=green>| @JOIN-UNIFIED</font></a>
+      <a href="https://www.glocation.info/fusionpro/features/cs.html" target="body2"><font color=green>| @GLOCATION.INFO |</font></a>
+    </span>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div>
+    <a href="centercourt.html" target="body2">HOME</a>
+    <a href="interiorindex.html" target="body2">vCARD</a>
+    <a href="https://www.greenvilleassociates.com/fusionshell/h/index.php/en/software" target="body2">SOFTWARE</a>
+    <a href="https://www.greenvilleassociates.com/fusionshell/h/index.php/en/services" target="body2">SERVICES</a>
+    <a href="https://www.greenvilleassociates.com/fusionshell/h/index.php/en/corporate" target="body2">CORPORATE</a>
+
+    <a href="https://gaweb1.greenvilleassociates.com/fusionshell/h/index.php" target="body2" class="grey">| NEWS+SEARCH</a>
+    <a href="https://gaweb1.greenvilleassociates.com/fusionshellplus/wiki/" target="_blank" class="grey">SUPPORTWIKI</a>
+    <a href="https://gaweb1.greenvilleassociates.com/fusionshell/w2/index.php/forums/" target="body2" class="grey">G.FORUMS</a>
+    <a href="https://github.com/greenvilleassociates" target="_blank" class="grey">DOWNLOADS&nbsp&nbsp|</a>
+
+    <a href="profile.html" target="body2"><img src="images/fusionshell25open.png" width="30" height="30" class="profile-pic"></a>
+    <a href="profile.html" target="body2" class="green">Profile</a>
+    <a href="login.php" target="body2" class="green">Login</a>
+    <a href="logout.php" target="body2" class="green">Logout</a>
+  </div>
+
 </div>
 </body>
 </html>
